@@ -5,9 +5,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-//import android.support.annotation.NonNull;
-//import android.support.v7.app.AlertDialog;
-//import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +15,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mycardgame.DataBase.DatabaseHandler;
 import com.example.mycardgame.DataBase.NoteDB;
@@ -26,10 +25,11 @@ import com.example.mycardgame.dataBaseStructure.SongImageDBStructure;
 
 import java.util.ArrayList;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import static android.os.Environment.getExternalStorageDirectory;
+
+//import android.support.annotation.NonNull;
+//import android.support.v7.app.AlertDialog;
+//import android.support.v7.widget.RecyclerView;
 
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>  {
