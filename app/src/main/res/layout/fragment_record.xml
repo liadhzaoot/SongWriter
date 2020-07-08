@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/AliceBlue"
+    android:clickable="true"
+    android:id="@+id/recordFragment"
+    tools:context=".RecordFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/StartRecBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/rec_img"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:background="#000000"-->
+<!--        ></ImageButton>-->
+
+    <ImageButton
+        android:id="@+id/playBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/StartRecBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-143dp"
+        android:layout_marginTop="99dp"
+        android:layout_toEndOf="@+id/StartRecBtn"
+        android:background="@drawable/play_button"
+        android:src="@android:drawable/ic_media_play"></ImageButton>
+
+    <TextView
+        android:id="@+id/seekBarHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seekBarAudio"
+        android:layout_alignEnd="@+id/seekBarAudio"
+        android:layout_marginEnd="186dp"
+        android:layout_marginBottom="-70dp"
+        android:text="00:00"
+        android:textSize="20dp"></TextView>
+
+    <SeekBar
+        android:id="@+id/seekBarAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time"
+        android:layout_marginTop="8dp"
+
+
+        >
+
+
+    </SeekBar>
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/RecTV"-->
+<!--        android:layout_width="190dp"-->
+<!--        android:layout_height="109dp"-->
+<!--        android:layout_alignTop="@+id/StartRecBtn"-->
+<!--        android:layout_alignBottom="@+id/StartRecBtn"-->
+<!--        android:layout_marginTop="39dp"-->
+<!--        android:layout_marginEnd="22dp"-->
+
+<!--        android:layout_marginBottom="62dp"-->
+<!--        android:layout_toStartOf="@+id/playBtn"-->
+<!--        android:gravity="center"-->
+<!--        android:text="PRESS \n TO \n REC"-->
+<!--        android:textColor="@color/White"-->
+<!--        android:textSize="20dp"-->
+<!--        android:typeface="serif" />-->
+
+    <Chronometer
+        android:id="@+id/time"
+        android:layout_width="202dp"
+        android:layout_height="116dp"
+        android:layout_alignStart="@+id/RecTV"
+        android:layout_alignTop="@+id/StartRecBtn"
+        android:layout_alignEnd="@+id/RecTV"
+        android:layout_alignBottom="@+id/StartRecBtn"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="-9dp"
+        android:layout_marginBottom="57dp"
+        android:textColor="@color/White"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:visibility="invisible">
+
+    </Chronometer>
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+
+        android:background="@color/CadetBlue"
+        android:text="BACK"></Button>
+</RelativeLayout>

@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FinalPage"
+
+
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:id="@+id/songTitleLayout"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/songTitle"
+            android:layout_width="287dp"
+            android:layout_height="70dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/title_text_view"
+            android:gravity="center"
+            android:text="Song Title"
+            android:textSize="48dp"
+            android:textColor="@color/White"
+            android:typeface="serif"/>
+<!--            android:background="@color/MediumSlateBlue"-->
+
+
+    </RelativeLayout>
+
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/StartRecBtn"-->
+<!--        android:layout_width="74dp"-->
+<!--        android:layout_height="65dp"-->
+<!--        android:layout_below="@+id/songTitleLayout"-->
+<!--        android:background="@"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="0dp"-->
+<!--        android:scaleType="centerInside"-->
+<!--        android:src="@drawable/rec_img"></ImageButton>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/recPressTxt"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_below="@+id/songTitleLayout"-->
+<!--        android:layout_alignStart="@+id/StartRecBtn"-->
+<!--        android:layout_marginStart="21dp"-->
+<!--        android:layout_marginTop="17dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="rec"-->
+<!--        android:textColor="@color/White"-->
+
+<!--        android:typeface="serif"></TextView>-->
+
+<!--    <Chronometer-->
+<!--        android:id="@+id/time"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:gravity="center"-->
+<!--        android:textColor="@color/White"-->
+<!--        android:textSize="10dp"-->
+<!--        android:layout_below="@+id/songTitleLayout"-->
+<!--        android:layout_alignStart="@+id/StartRecBtn"-->
+<!--        android:layout_marginStart="21dp"-->
+<!--        android:layout_marginTop="17dp"-->
+<!--        android:visibility="invisible">-->
+
+<!--    </Chronometer>-->
+
+    <!--        <TextView-->
+<!--            android:id="@+id/recPressTxt"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_below="@+id/songTitleLayout"-->
+<!--            android:layout_alignStart="@+id/StartRecBtn"-->
+<!--            android:layout_marginStart="21dp"-->
+<!--            android:layout_marginTop="17dp"-->
+<!--            android:gravity="center"-->
+<!--            android:text="rec"-->
+<!--            android:textColor="@color/White"-->
+
+<!--            android:typeface="serif"></TextView>-->
+
+    <ImageButton
+        android:id="@+id/StartRecBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/songTitleLayout"
+        android:background="@drawable/record_button_oval"
+        android:layout_centerHorizontal="true"
+        android:outlineAmbientShadowColor="@color/Black"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_speak"></ImageButton>
+
+    <Chronometer
+        android:id="@+id/time"
+        android:layout_width="67dp"
+        android:layout_height="67dp"
+        android:layout_below="@+id/songTitleLayout"
+        android:layout_alignStart="@+id/StartRecBtn"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:textColor="@color/Black"
+        android:textSize="15dp"
+        android:visibility="invisible">
+
+    </Chronometer>
+
+    <ImageButton
+        android:id="@+id/playBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/rememberItems"
+        android:layout_below="@+id/seekBarHint"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/play_button"
+        android:elevation="15dp"
+        android:src="@android:drawable/ic_media_play"></ImageButton>
+
+    <TextView
+        android:id="@+id/seekBarHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekBarAudio"
+        android:layout_centerHorizontal="true"
+        android:text="00:00"
+        android:textSize="18dp"
+        android:typeface="serif"></TextView>
+
+    <SeekBar
+        android:id="@+id/seekBarAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/StartRecBtn"
+        android:layout_marginTop="8dp"
+
+
+        >
+
+    </SeekBar>
+
+    <LinearLayout
+        android:id="@+id/rememberItems"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_above="@+id/imgAndText"
+        android:orientation="horizontal">
+
+<!--        Theme     -->
+<LinearLayout
+    android:id="@+id/ThemeRemember"
+    android:layout_width="70dp"
+    android:layout_height="350dp"
+    android:layout_above="@+id/imgAndText"
+    android:orientation="vertical"
+    android:layout_weight="1">
+
+    <TextView
+        android:id="@+id/ThemeCard"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/card_button_last_activity"
+        android:text="Card"
+        android:typeface="serif"
+        android:textColor="@color/White"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:elevation="15dp"
+        android:layout_margin="8dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/ThemeNote"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/note_button_last_activity"
+        android:text="Note"
+        android:elevation="15dp"
+        android:textColor="@color/White"
+        android:gravity="center"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:typeface="serif"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/ThemeRec"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:elevation="15dp"
+        android:background="@drawable/record_button_last_activity"
+        android:text="Record"
+        android:textColor="@color/White"
+        android:gravity="center"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:typeface="serif"
+        tools:srcCompat="@tools:sample/avatars" />
+
+</LinearLayout>
+
+        <!--        Melody     -->
+
+        <LinearLayout
+            android:id="@+id/MelodyRemember"
+            android:layout_width="70dp"
+            android:layout_height="350dp"
+            android:layout_above="@+id/imgAndText"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/MelodyCard"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/card_button_last_activity"
+                android:text="Card"
+                android:textColor="@color/White"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:elevation="15dp"
+                android:typeface="serif"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/MelodyNote"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/note_button_last_activity"
+                android:text="Note"
+                android:textColor="@color/White"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:elevation="15dp"
+                android:typeface="serif"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/MelodyRec"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/record_button_last_activity"
+                android:text="Record"
+                android:textColor="@color/White"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:elevation="15dp"
+                android:typeface="serif"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </LinearLayout>
+        <!--        Lyrics     -->
+        <LinearLayout
+        android:id="@+id/LyricsRemember"
+        android:layout_width="70dp"
+        android:layout_height="350dp"
+        android:layout_above="@+id/imgAndText"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/LyricsCard"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/card_button_last_activity"
+            android:text="Card"
+            android:textColor="@color/White"
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:typeface="serif"
+            android:elevation="15dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/LyricsNote"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/note_button_last_activity"
+            android:text="Note"
+            android:textColor="@color/White"
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:elevation="15dp"
+            android:typeface="serif"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/LyricsRec"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/record_button_last_activity"
+            android:text="Record"
+            android:textColor="@color/White"
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:elevation="15dp"
+            android:typeface="serif"
+            tools:srcCompat="@tools:sample/avatars" />
+
+
+
+        </LinearLayout>
+
+        <!--        Instrument     -->
+        <LinearLayout
+            android:id="@+id/InstrumentRemember"
+            android:layout_width="70dp"
+            android:layout_height="350dp"
+            android:layout_above="@+id/imgAndText"
+            android:orientation="vertical"
+            android:elevation="15dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/InstrumentCard"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/card_button_last_activity"
+                android:text="Card"
+                android:textColor="@color/White"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:typeface="serif"
+                android:elevation="15dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/InstrumentNote"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/note_button_last_activity"
+                android:text="Note"
+                android:textColor="@color/White"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:typeface="serif"
+                android:elevation="15dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/InstrumentRec"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/record_button_last_activity"
+                android:text="Record"
+                android:textColor="@color/White"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:typeface="serif"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </LinearLayout>
+
+        <!--        Chord     -->
+        <LinearLayout
+            android:id="@+id/ChordRemember"
+            android:layout_width="70dp"
+            android:layout_height="350dp"
+            android:layout_above="@+id/imgAndText"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/ChordCard"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/card_button_last_activity"
+                android:text="Card"
+                android:textColor="@color/White"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:elevation="15dp"
+                android:typeface="serif"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/ChordNote"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/note_button_last_activity"
+                android:text="Note"
+                android:textColor="@color/White"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:elevation="15dp"
+                android:typeface="serif"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/ChordRec"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/record_button_last_activity"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:text="Record"
+                android:textColor="@color/White"
+                android:gravity="center"
+                android:elevation="15dp"
+                android:typeface="serif"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/imgAndText"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="0dp"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+
+            android:id="@+id/packBackMenuLL"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="@color/CornflowerBlue"
+            android:gravity="top"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageView
+                android:id="@+id/ImgCordProgression"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/chord_progression_back"
+                android:layout_weight="1"
+                tools:srcCompat="@tools:sample/avatars" />
+
+
+
+            <ImageView
+                android:id="@+id/ImgLyrics"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/lyrics_back"
+                android:layout_weight="1"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/ImgInstruments"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/instruments_back"
+                android:layout_weight="1"
+                tools:srcCompat="@tools:sample/avatars" />
+            <ImageView
+                android:id="@+id/ImgMelody"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+
+                android:layout_weight="1"
+                tools:srcCompat="@tools:sample/avatars"
+                android:src="@drawable/melody_back"/>
+
+            <ImageView
+                android:id="@+id/ImgTheme"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/theme_back"
+                android:layout_weight="1"
+
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/helpArrowProgression"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+
+            android:layout_weight="1"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <LinearLayout
+            android:id="@+id/textLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/CornflowerBlue"
+            android:orientation="horizontal"
+            android:textColor="@color/White">
+
+            <TextView
+                android:id="@+id/CordProgressionTxt"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="Chord"
+                android:gravity="center_horizontal"
+                android:textColor="@color/White"
+                android:typeface="serif"/>
+
+
+
+            <TextView
+                android:id="@+id/LyricsTxt"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="Lyrics"
+                android:gravity="center_horizontal"
+                android:textColor="@color/White"
+                android:typeface="serif"
+                />
+            <TextView
+                android:id="@+id/InstrumentsTxt"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="Instrument"
+                android:gravity="center_horizontal"
+                android:textColor="@color/White"/>
+            <TextView
+                android:id="@+id/MelodyTxt"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="Melody"
+                android:gravity="center_horizontal"
+                android:textColor="@color/White"
+                android:typeface="serif"/>
+
+            <TextView
+                android:id="@+id/ThemeTxt"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="Theme"
+                android:gravity="center_horizontal"
+                android:textColor="@color/White"
+                android:typeface="serif"
+                />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/noteFragment"
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        />
+    <FrameLayout
+        android:id="@+id/cardFragment"
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        />
+    <FrameLayout
+        android:id="@+id/recordFragment"
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+
+        />
+
+</RelativeLayout>

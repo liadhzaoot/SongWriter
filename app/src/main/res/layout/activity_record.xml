@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecordActivity">
+    <ImageView
+        android:id="@+id/packBackImgV"
+
+        android:layout_width="134dp"
+        android:layout_height="134dp"
+        android:layout_below="@+id/packNameTxV"
+        android:layout_alignEnd="@+id/packNameTxV"
+
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="127dp"
+        android:layout_marginBottom="8dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+
+    <TextView
+        android:id="@+id/packNameTxV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="7dp"
+        android:text="packNameTxV"
+        android:textSize="48dp"
+        android:gravity="center"
+
+        android:typeface="serif"/>
+
+
+    <ImageButton
+        android:id="@+id/StartRecBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/record_button_oval"
+        android:src="@drawable/ic_speak"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/playBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekBarHint"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="66dp"
+        android:background="@drawable/play_button"
+        android:src="@android:drawable/ic_media_play"></ImageButton>
+
+    <TextView
+        android:id="@+id/seekBarHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/seekBarAudio"
+        android:text="00:00"
+        android:textSize="20dp"></TextView>
+
+    <SeekBar
+        android:id="@+id/seekBarAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time"
+        android:layout_marginTop="8dp"
+
+
+        >
+
+    </SeekBar>
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/RecTV"-->
+<!--        android:layout_width="190dp"-->
+<!--        android:layout_height="109dp"-->
+<!--        android:layout_toStartOf="@+id/playBtn"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:text="PRESS \n TO \n RECORD"-->
+<!--        android:textColor="@color/White"-->
+<!--        android:gravity="center"-->
+<!--        android:textSize="20dp"-->
+<!--        android:typeface="serif" />-->
+
+    <Chronometer
+        android:id="@+id/time"
+        android:layout_width="111dp"
+        android:layout_height="80dp"
+        android:layout_alignStart="@+id/RecTV"
+        android:layout_alignTop="@+id/StartRecBtn"
+        android:layout_alignBottom="@+id/StartRecBtn"
+
+        android:layout_toStartOf="@+id/StartRecBtn"
+        android:gravity="center"
+        android:textColor="@color/Black"
+        android:textSize="20dp"
+        android:visibility="invisible">
+
+    </Chronometer>
+
+</RelativeLayout>

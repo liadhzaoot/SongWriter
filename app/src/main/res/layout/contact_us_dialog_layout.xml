@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_marginTop="12dp"
+        android:id="@+id/reportAProblem"
+        android:text="Report a Problem "
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/transperent"
+        />
+    <Button
+        android:layout_marginTop="3dp"
+        android:id="@+id/sendFeedBack"
+        android:text="Send a FeedBack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/transperent"
+       />
+
+</LinearLayout>

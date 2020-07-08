@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/content_start"
+    tools:context=".StartActivity"
+    tools:showIn="@layout/activity_start"
+    android:orientation="vertical"
+    tools:actionBarNavMode="standard">
+    <TextView
+        android:id="@+id/numberOfSongsTV"
+        android:typeface="serif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/Black"
+        android:text="0 songs"
+        android:textAlignment="center"
+        android:textColor="@color/White"
+        android:textSize="48sp">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/searchET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="  Search Song..."
+        android:background="@drawable/rounded_et"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:typeface="serif"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+    </EditText>
+<androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/SongsRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+    >
+
+</androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+</LinearLayout>

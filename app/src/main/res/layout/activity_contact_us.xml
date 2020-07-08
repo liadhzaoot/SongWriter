@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactUsActivity"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/orange_contact_us_background"
+    >
+
+    <TextView
+        android:id="@+id/contactUsTitleTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact us"
+        android:typeface="serif"
+        android:gravity="center"
+        android:textSize="35sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/descriptionContactUsTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:typeface="serif"
+        android:gravity="center"
+        android:layout_margin="15dp"
+        android:text="Please fill out this forms to contact us and we'll get back to you right away"
+        android:textSize="16sp">
+
+    </TextView>
+
+<!--    <TextView-->
+<!--        android:id="@+id/nameTV"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="*NAME:"-->
+<!--        android:textSize="18sp"-->
+<!--        android:paddingStart="15dp"-->
+
+<!--        />-->
+<!--    <EditText-->
+<!--    android:id="@+id/nameET"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:hint="enter your full name"-->
+<!--    android:typeface="serif"-->
+<!--    android:layout_margin="15dp">-->
+
+
+<!--    </EditText>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/emailTv"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="*EMAIL:"-->
+<!--        android:textSize="18sp"-->
+<!--        android:paddingLeft="15dp"-->
+
+<!--        />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/emailET"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="15dp"-->
+<!--        android:hint="enter your email"-->
+<!--        android:typeface="serif"-->
+<!--        android:inputType="textEmailAddress"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/massageTV"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/message"-->
+<!--        android:textSize="18sp"-->
+<!--        android:paddingLeft="15dp"-->
+
+<!--        />-->
+<!--    <EditText-->
+<!--        android:id="@+id/feedBackUserToCompany"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:hint="@string/what_do_you_think_we_can_improve"-->
+<!--        android:typeface="serif"-->
+<!--        android:layout_margin="15dp"-->
+<!--        android:gravity="start"/>-->
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:errorEnabled="true"
+        android:layout_marginTop="15dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="*Email"
+            android:inputType="textEmailAddress"
+             />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:errorEnabled="true"
+        android:layout_marginTop="15dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="*Subject"
+            android:maxLines="2"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_massenge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:errorEnabled="true"
+        android:layout_marginTop="15dp"
+        android:tag="asd">
+
+      <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/description"
+            android:gravity="start"
+            android:maxLines="9"
+
+            android:verticalScrollbarPosition="defaultPosition"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/sendMessageBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/submit"
+        android:textColor="@color/White" />
+
+
+</LinearLayout>

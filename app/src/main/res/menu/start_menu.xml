@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.mycardgameapp.startActivity">
+
+    <item
+        android:id="@+id/website"
+        android:title="Website"
+        ></item>
+    <item
+        android:id="@+id/howToPlay"
+        android:title="How To Play"
+        ></item>
+    <item
+        android:id="@+id/rateUS"
+        android:title="Rate This App"
+        ></item>
+    <item
+        android:id="@+id/contactUs"
+        android:title="Contact Us"
+        ></item>
+</menu>
