@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -247,10 +248,17 @@ public class FinalPage extends AppCompatActivity implements Serializable, View.O
         }
         else
         {
-             fileName = getFilesDir() + "/" +
+//             fileName = getFilesDir() + "/" +
+//                    songTitle.getText().toString() +
+//                    "FinalSongRec"
+//                    + "File" + "AudioRecording.3gp";
+
+
+            fileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" +
                     songTitle.getText().toString() +
-                    "FinalSongRec"
-                    + "File" + "AudioRecording.3gp";
+                    pack.get(cardSubjectNum).getSubject()
+                    + "File" + "AudioRecording.ogg";
+
         }
         //recordDB.insertSong(fileName,songTitle.getText().toString());
 

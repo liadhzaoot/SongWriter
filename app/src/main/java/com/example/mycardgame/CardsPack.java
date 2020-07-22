@@ -3,7 +3,6 @@ package com.example.mycardgame;
 import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.LinkedList;
@@ -56,7 +55,7 @@ public class CardsPack implements Serializable {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,subject , Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context,subject , Toast.LENGTH_SHORT).show();
                 //imageView.setBackgroundResource(R.drawable.image_border);
                 for (int i = 0; i < clickLisinearLinkedList.size(); i++) {
                     clickLisinearLinkedList.get(i).clickLisinear(packCardNumber);

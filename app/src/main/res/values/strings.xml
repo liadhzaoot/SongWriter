@@ -35,9 +35,158 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
-    
+
     <string name="home_second">Home Second</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_how_to_play">HowToPlayActivity</string>
+    <string name="tab_text_1">Instruction</string>
+    <string name="tab_text_2">Application Use</string>
+    <!--instraction strings page-->
+    <string name="page1_instruction"><![CDATA[
+        <b>How to Play</b> \n
+<p>To play the game, one of the participants
+will have to demonstrate basic musical skills.</p>
+
+<p>The game is designed to work alone or in a
+clinical setting. When working with a client,
+the therapist should allow them the
+autonomy to choose any card to begin with,
+and engage in the songwriting process along
+the way.</p>
+
+<b>To begin:</b> Separate the cards into the
+following groups according to the label on
+the front of each card: \n
+Theme, Melody, Lyric, Instruments &amp;
+Chord Progression]]></string>
+
+    <string name="page2_instruction"><![CDATA[
+        <b>Procedure</b> \n
+<p>Pick any card to start the songwriting
+process. After implementing the rules
+presented on that card, you may pick another
+card to continue the process.</p>
+
+<p>The song is complete once you include all
+five songwriting elements within your cards.
+If you feel the need to continue your song
+with more sections (a bridge, a new verse,
+chorus), simply continue drawing cards to
+inspire you along your creative process.</p>
+<b>Note:</b> Feel free to develop your song beyond
+the cards that are presented to you, these are
+just starting points.]]>
+    </string>
+    <string name="page3_instruction"><![CDATA[
+        <b>About The Cards</b>\n
+<p><b>Theme:</b> This will typically be the starting
+point in the songwriting process to set up the
+mood and theme for the song. However, if
+you already have a theme in mind, you may
+skip them.</p>
+<p><b>Lyric:</b> Follow the directions on each card.</p>
+<p><b>Chord Progression:</b> Follow the chord
+progression presented on each card.</p>
+<b>As a variation:</b> You may also choose two
+cards: one card will address the chord
+progression of the verse, while the other
+card may be used as the chord progression
+of the chorus.]]>
+    </string>
+    <string name="page4_instruction"><![CDATA[
+<p><b>Instruments:</b> Play the instrument presented
+on the card while singing your song.</p>
+    <b>Variations:</b>
+<p>1) You may add that instrument as an
+embellishment throughout the song.</p>
+<p>2) You may choose two cards, one
+instrument to be played during the
+verse, and the other during the chorus.</p>
+<b>Melody:</b> Follow the directions on each card
+on how to come up and develop a motive
+<b>Keep in mind:</b> Each card guides you
+through developing only the first 4
+measures, you may draw total of 3 cards
+to create a complete 12 measure verse or
+course.\n
+<b>Note:</b> Eventually, you will have to adjust the
+melody to the chord progression and the key
+of the song.]]>
+    </string>
+
+
+
+    <string name="description_page_1"><![CDATA[
+        To start a new song click on the plus button.
+    ]]>
+    </string>
+    <string name="description_page_2"><![CDATA[
+        <p>Enter your song name </p><b>you can not choose song name that already exist</b>.
+    ]]>
+    </string>
+    <string name="description_page_3"><![CDATA[
+        The <b>*</b> telling you that the song is not finish yet.
+    ]]>
+    </string>
+    <string name="description_page_4"><![CDATA[
+        <p>You need to choose any card from the bottom</p>
+        <b>Recommended:</b> Start with Theme card.
+    ]]>
+    </string>
+    <string name="description_page_5"><![CDATA[
+        Now you can choose: <b>Shuffle Or Choose</b>.
+    ]]>
+    </string>
+    <string name="description_page_6"><![CDATA[
+       If you choose the option "Choose A Card" you can choose any card you want from the list.
+    ]]>
+    </string>
+    <string name="description_page_7"><![CDATA[
+        If you choose the option "Shuffle A Card" the application choose for you card from the list.
+    ]]>
+    </string>
+    <string name="description_page_8"><![CDATA[
+    After you choose a card you can regret and "Choose Again" or "Done".
+    ]]>
+    </string>
+    <string name="description_page_17"><![CDATA[
+        You can write some Notes and Record some stuff for each Card.
+    ]]>
+    </string>
+    <string name="description_page_9"><![CDATA[
+    Here you can write a note.
+    ]]>
+    </string>
+    <string name="description_page_10"><![CDATA[
+           Here you can Record some stuff.
+    ]]>
+    </string>
+    <string name="description_page_11"><![CDATA[
+        After you finish choose all cards click Next.
+    ]]>
+    </string>
+    <string name="description_page_12"><![CDATA[
+        <p>This is the last page, here you record your song.</p>
+        here you can see all your card choose, notes, and records for each card.
+    ]]>
+    </string>
+    <string name="description_page_13"><![CDATA[
+        Card Example.
+    ]]>
+    </string>
+    <string name="description_page_14"><![CDATA[
+    Note example, you can read your lyrics while you are recording !
+    ]]>
+    </string>
+    <string name="description_page_15"><![CDATA[
+        You can listen to your Melody for example.
+    ]]>
+    </string>
+    <string name="description_page_16"><![CDATA[
+        When you finish your Record you can see your project at the screen. date and time of your last enter.
+    ]]>
+    </string>
+
 </resources>

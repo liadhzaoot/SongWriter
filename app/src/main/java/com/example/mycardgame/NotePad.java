@@ -91,7 +91,7 @@ public class NotePad extends AppCompatActivity{
 
             //etNotePad.getText().clear();
             //TODO: CHANGE THE FILE DIR
-            Toast.makeText(this, "save to " + getFilesDir() + " / " + fileName, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "The Note saved", Toast.LENGTH_SHORT).show();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

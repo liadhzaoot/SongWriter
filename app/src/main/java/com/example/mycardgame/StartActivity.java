@@ -51,6 +51,7 @@ public class StartActivity extends AppCompatActivity implements SongNameEnterDia
     private String _songName = "liad";
     //check if the user search and try to open new song
     private int i = 0;
+    private  Intent shareIntent = new Intent();
     public static final String IS_CREATED = "isCreated";
     private boolean isLastPageFinish = false;
     private RecordDB recordDB;
@@ -343,7 +344,9 @@ public class StartActivity extends AppCompatActivity implements SongNameEnterDia
                 startActivity(i);
                 break;
             case R.id.nav_how_to_play:
-                Toast.makeText(this, "howToPlay", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "howToPlay", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, HowToPlayActivity.class);
+                startActivity(intent);
                 break;
             case R.id.nav_rate_this_app:
                 //Toast.makeText(this, "rateUS", Toast.LENGTH_SHORT).show();
@@ -361,7 +364,12 @@ public class StartActivity extends AppCompatActivity implements SongNameEnterDia
                 openDialog(2);
                 break;
             case R.id.nav_share:
-                Toast.makeText(this, "share this app", Toast.LENGTH_SHORT).show();
+
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "http://play.google.com/store/apps/details?id=" + getPackageName());
+                shareIntent.setType("text/plain");
+                startActivity(shareIntent);
+                //Toast.makeText(this, "share this app", Toast.LENGTH_SHORT).show();
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;

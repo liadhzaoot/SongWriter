@@ -14,10 +14,11 @@
         android:id="@+id/cardImg1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:srcCompat="@tools:sample/avatars"
-        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
+        android:layout_centerInParent="true"
+        android:layout_above="@+id/backBtn"
         android:layout_centerVertical="true"
-        android:background="@drawable/image_border" />
+        tools:srcCompat="@tools:sample/avatars" />
     <Button
         android:id="@+id/backBtn"
         android:layout_width="match_parent"

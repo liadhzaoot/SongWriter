@@ -19,12 +19,15 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mycardgame.DataBase.DatabaseHandler;
+import com.zolad.zoominimageview.ZoomInImageView;
 
 import java.io.Serializable;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.LinkedList;
+
+import uk.co.senab.photoview.PhotoViewAttacher;
 
 
 public class GameActivity extends AppCompatActivity implements clickLisinear, Serializable, View.OnClickListener {
@@ -51,12 +54,13 @@ public class GameActivity extends AppCompatActivity implements clickLisinear, Se
     private LinkedList<Integer> backCradsPhotoList;
     private LinkedList<TextView> packNameTextViewList;
     private LinearLayout llShuffleOrChooseMode, llNoteRecBtn;
-    private ImageView imgCardChoose;
+    private ZoomInImageView imgCardChoose;
     private int packIntChoose;
     private Card choosenCard;
     private Button shuffleBtn, chooseBtn, btnNote, btnRecord, btnFinish, changeChooseBtn;
     private TextView txtStart, songTitle,cardSubject;
     private int numberOfPackClick = 0;
+    private PhotoViewAttacher photoViewAttacher;
     ArrayList<backListener> backListener;
     //animation
     Animation blink;
@@ -75,6 +79,7 @@ public class GameActivity extends AppCompatActivity implements clickLisinear, Se
         chooseBtn.setOnClickListener(this);
         cardsPackLinkedList = new LinkedList<>();
         imgCardChoose = findViewById(R.id.imgCardChoose);
+
         llNoteRecBtn = findViewById(R.id.buttonPanel);
         songTitle = findViewById(R.id.songTitle);
         btnNote = findViewById(R.id.noteBtn);
@@ -284,15 +289,35 @@ public class GameActivity extends AppCompatActivity implements clickLisinear, Se
                 }
                 case "Lyrics": {
                     lyricsPhotoList = new LinkedList<>();
-                    for (k = 0; k < numberOfCardsList.get(i); k++)
-                        lyricsPhotoList.add(R.drawable.lyrics_back);
+                    lyricsPhotoList.add(R.drawable.fill_in_the_blank_1);
+                    lyricsPhotoList.add(R.drawable.fill_in_the_blank_2);
+                    lyricsPhotoList.add(R.drawable.metaphor_1);
+                    lyricsPhotoList.add(R.drawable.metaphor_2);
+                    lyricsPhotoList.add(R.drawable.the_rap_song);
+                    lyricsPhotoList.add(R.drawable.theme_cards_song);
+                    lyricsPhotoList.add(R.drawable.associations);
+                    lyricsPhotoList.add(R.drawable.black_out_lyrics);
+                    lyricsPhotoList.add(R.drawable.blues_inspired_lyrics);
+                    lyricsPhotoList.add(R.drawable.brainstorm);
+                    lyricsPhotoList.add(R.drawable.songs_9_lines);
+                    lyricsPhotoList.add(R.drawable.titles_1_song);
 
                 }
                 case "Melody": {
                     melodyPhotoList = new LinkedList<>();
-                    for (k = 0; k < numberOfCardsList.get(i); k++)
-                        melodyPhotoList.add(R.drawable.melody_back);
-//                melodyPhotoList.add(R.drawable.voice);
+                        melodyPhotoList.add(R.drawable.pentatonic_scale_1);
+                        melodyPhotoList.add(R.drawable.pentatonic_scale_2);
+                        melodyPhotoList.add(R.drawable.random_notes_1);
+                        melodyPhotoList.add(R.drawable.random_notes_2);
+                        melodyPhotoList.add(R.drawable.image_1);
+                        melodyPhotoList.add(R.drawable.image_2);
+                        melodyPhotoList.add(R.drawable.intonation_1);
+                        melodyPhotoList.add(R.drawable.intonation_2);
+                        melodyPhotoList.add(R.drawable.environment_1);
+                        melodyPhotoList.add(R.drawable.environment_2);
+                        melodyPhotoList.add(R.drawable.favorite_song_1);
+                        melodyPhotoList.add(R.drawable.favorite_song_2);
+                    //melodyPhotoList.add(R.drawable.pentatonic_scale_1);
 //                melodyPhotoList.add(R.drawable.tamboline);
 //                melodyPhotoList.add(R.drawable.orff_instruments);
 //                melodyPhotoList.add(R.drawable.paddle_frame);
@@ -468,11 +493,11 @@ public class GameActivity extends AppCompatActivity implements clickLisinear, Se
     }
 
     public void initBackCradsPhotoList() {
-        backCradsPhotoList.add(R.drawable.theme_back);
-        backCradsPhotoList.add(R.drawable.melody_back);
-        backCradsPhotoList.add(R.drawable.instruments_back);
-        backCradsPhotoList.add(R.drawable.lyrics_back);
-        backCradsPhotoList.add(R.drawable.chord_progression_back);
+        backCradsPhotoList.add(R.drawable.theme_front);
+        backCradsPhotoList.add(R.drawable.melody_front);
+        backCradsPhotoList.add(R.drawable.instruments_front);
+        backCradsPhotoList.add(R.drawable.lyrics_front);
+        backCradsPhotoList.add(R.drawable.chord_progression_front);
     }
 
     /**
@@ -654,6 +679,8 @@ public class GameActivity extends AppCompatActivity implements clickLisinear, Se
 
     @SuppressLint("ResourceAsColor")
     public void packClick(int curPack) {
+//        photoViewAttacher = new PhotoViewAttacher(imgCardChoose);
+//        photoViewAttacher.update();
         /**
          * בודק אם החבילה נלחצה בעבר או לא
          */
@@ -676,7 +703,10 @@ public class GameActivity extends AppCompatActivity implements clickLisinear, Se
             txtStart.setVisibility(View.INVISIBLE);
 
             cardsPackLinkedList.get(curPack).setClick(true);
+            /*
             packNameTextViewList.get(curPack).setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+             */
+
             //stop animation
             //---------------------------------------------------------------------------------------------------------------
 
@@ -693,7 +723,10 @@ public class GameActivity extends AppCompatActivity implements clickLisinear, Se
 
             changeImgCardChoose(cardsPackLinkedList.get(curPack).getBackCardImg(), cardsPackLinkedList.get(curPack).getImageView());
             cardsPackLinkedList.get(curPack).setChoosenCard(choosenCard);
-            cardsPackLinkedList.get(curPack).getImageView().setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+            /*
+             cardsPackLinkedList.get(curPack).getImageView().setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+             */
+
 
             changeImgCardChoose(cardsPackLinkedList.get(curPack).getChoosenCard().getImg(), imgCardChoose);
 

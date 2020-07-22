@@ -21,7 +21,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.mycardgame.DataBase.RecordDB;
-import com.example.mycardgame.R;
 import com.example.mycardgame.dataBaseStructure.RecordDBStructure;
 
 import java.io.IOException;
@@ -74,6 +73,8 @@ public class RecordHelper {
             public void onPrepared(MediaPlayer mp) {
                 _seekBarAudio.setMax(mp.getDuration());
                 changeSeekbar();
+                //_recordButton.setEnabled(true);
+
             }
         });
 
@@ -123,8 +124,12 @@ public class RecordHelper {
                 boolean isSuccessPlayRec = true;
                 RecordDBStructure recordDBStructure = recordDB.getNoteTextStructure(_recordFileName);
                 _seekBarAudio.setProgress(0);
+                /**
+                 * if you can the btn
+                 */
                 if (!playClick) {
                     _buttonPlayStopLastRecordAudio.setEnabled(true);
+                    _recordButton.setEnabled(true);
 
                     //MediaPlayer mediaPlayer = new MediaPlayer();
                     //mediaPlayer1 = new MediaPlayer();
@@ -142,6 +147,7 @@ public class RecordHelper {
                     }
                     if (isSuccessPlayRec) {
                         _buttonPlayStopLastRecordAudio.setImageResource(android.R.drawable.ic_media_pause);
+                        _recordButton.setEnabled(false);
                         mediaPlayer1.start();
 //                    Toast.makeText(_context, "Recording Playing",
 //                            Toast.LENGTH_LONG).show();
@@ -151,6 +157,7 @@ public class RecordHelper {
                 } else {
                     playClick = !playClick;
                     _buttonPlayStopLastRecordAudio.setImageResource(android.R.drawable.ic_media_play);
+                    _recordButton.setEnabled(true);
                     if (mediaPlayer1 != null) {
                         mediaPlayer1.stop();
                         mediaPlayer1.reset();
@@ -170,6 +177,7 @@ public class RecordHelper {
 //                    buttonStop.setEnabled(false);
 //                    buttonStart.setEnabled(true);
                 _buttonPlayStopLastRecordAudio.setImageResource(android.R.drawable.ic_media_play);
+                _recordButton.setEnabled(true);
                 _seekBarHint.setText("00:00");
 //                    buttonPlayStopLastRecordAudio.setEnabled(false);
 //                    buttonPlayLastRecordAudio.setEnabled(true);
@@ -384,7 +392,7 @@ public class RecordHelper {
     }
 
     /**
-     * finish activity needs top stop the record
+     * finish activity needs to stop the record
      */
     public void stopRecFActivity() {
         // app icon in action bar clicked; go home

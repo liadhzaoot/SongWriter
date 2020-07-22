@@ -5,6 +5,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -47,13 +49,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private ArrayList<String> dateArray = new ArrayList<>();
     private ImageButton shareIB;
     Context context;
-    private StartActivity startActivity;
+    private StartActivity startActivity_activity;
     private TextView tv ;
     public RecyclerViewAdapter(Context context, ArrayList<RecycleViewStructure>  songNameAndDateArray, ImageButton shareIB, StartActivity startActivity) {
         this.songNameAndDateArray = songNameAndDateArray;
         this.context = context;
         this.shareIB = shareIB;
-        this.startActivity = startActivity;
+        this.startActivity_activity = startActivity;
     }
 
     @NonNull
@@ -82,19 +84,41 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View v) {
 
+//                shareIntent.setAction(Intent.ACTION_SEND);
+//                shareIntent.putExtra(Intent.EXTRA_TEXT, "Song Name - '" + songNameAndDateArray.get(newI).getSongName().toString() + "' " +
+//                       "\n Open Date - " + " '" + songNameAndDateArray.get(newI).getDate() + "' \n Application Owner : Liad Hazoot & Maya Haddi Zebli");
+//                shareIntent.setType("text/plain");
+//                String sharePath =  context.getFilesDir() + "/" +
+//                        songNameAndDateArray.get(newI).getSongName().toString() +
+//                        "FinalSongRec"
+//                        + "File" + "AudioRecording.3gp";;
+               // Intent.createChooser(shareIntent, "Share Sound File");
+
+
+                /**
+                 *  -------------------------- test-------------------------
+                 */
+
+                String sharePath = Environment.getExternalStorageDirectory().getPath() + "/" +
+                        songNameAndDateArray.get(newI).getSongName().toString() +
+                        "FinalSongRec"
+                       + "File" + "AudioRecording.ogg";
+                Uri uri = Uri.parse(sharePath);
                 shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.putExtra(Intent.EXTRA_TEXT, "Song Name - '" + songNameAndDateArray.get(newI).getSongName().toString() + "' " +
-                        "\n Open Date - " + " '" + songNameAndDateArray.get(newI).getDate() + "' \n Application Owner : Liad Hazoot & Maya Haddi Zebli");
-                shareIntent.setType("text/plain");
-                PopupMenu popup = new PopupMenu(startActivity, v);
-                //popup.inflate(R.menu.popup_menu);
+                shareIntent.setType("audio/*");
+                shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+                shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                //startActivity(Intent.createChooser(share, "Share Sound File"));
+
+
+                PopupMenu popup = new PopupMenu(startActivity_activity, v);
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.share:
 
-                                startActivity.startActivity(shareIntent);
+                                startActivity_activity.startActivity(Intent.createChooser(shareIntent,"share audio"));
 
                                 return true;
                             case R.id.delete: {
@@ -129,9 +153,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 intent.putExtra(MELODY,songImageDBStructure.getMelodyCard());
                 intent.putExtra(THEME,songImageDBStructure.getThemeCard());
 
-                startActivity.startActivity(intent);
-                startActivity.finish();
-                Toast.makeText(context, songNameAndDateArray.get(newI).getDate() + " " + songNameAndDateArray.get(newI).getDate(), Toast.LENGTH_SHORT).show();
+                startActivity_activity.startActivity(intent);
+                startActivity_activity.finish();
+                //Toast.makeText(context, songNameAndDateArray.get(newI).getDate() + " " + songNameAndDateArray.get(newI).getDate(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -168,17 +192,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             return stringArrayList;
         }
         for (int i = 0; i < arrayList.size(); i++) {
-            if (isSubStringIn(arrayList.get(i).getSongName().trim(), subString.toString().trim())) {
-//                ArrayList<String> list2 = new ArrayList<>();
-//                list2.add(arrayList.get(i).get(0));
-//                list2.add(arrayList.get(i).get(1));
-
+            if (arrayList.get(i).getSongName().contains(subString)) {
                 stringArrayList.add(arrayList.get(i));
-
             }
+
         }
-
-
         return stringArrayList;
     }
     //check if the song name is exist
@@ -245,7 +263,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         // AlertDialog Builder class
         AlertDialog.Builder builder
                 = new AlertDialog
-                .Builder(startActivity);
+                .Builder(startActivity_activity);
 
         // Set the message show for the Alert time
         builder.setMessage("Do you want to Delete ?");
@@ -275,9 +293,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                                 // When the user click yes button
                                 // then app will close
-                                DatabaseHandler db = new DatabaseHandler(startActivity);
-                                NoteDB noteDB = new NoteDB(startActivity);
-                                RecordDB recordDB = new RecordDB(startActivity);
+                                DatabaseHandler db = new DatabaseHandler(startActivity_activity);
+                                NoteDB noteDB = new NoteDB(startActivity_activity);
+                                RecordDB recordDB = new RecordDB(startActivity_activity);
 
                                 db.deleteSong(songNameAndDateArray.get(position).getSongName().toString());
                                 noteDB.deleteSong(songNameAndDateArray.get(position).getSongName(),context.getFilesDir());
@@ -285,11 +303,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                                 Toast.makeText(context, "the song \""+songNameAndDateArray.get(position).getSongName() + "\" Deleted", Toast.LENGTH_SHORT).show();
                                 songNameAndDateArray.remove(position);
-                                startActivity.removeSearchText();
+                                startActivity_activity.removeSearchText();
                                 //StartActivity.setSongNumberAfterDelete();
                                 //StartActivity.deleteFromSongAndDateArray(position);
-                                startActivity.initArrays();
-                                startActivity.initAllViews();
+                                startActivity_activity.initArrays();
+                                startActivity_activity.initAllViews();
                             }
                         });
 

@@ -35,6 +35,7 @@ public class ChooseCardActivity extends AppCompatActivity implements View.OnClic
     private  LinearLayout gallertyLinearLayout;
     private View view;
     private LinkedList<ImageView> ivLinkedList;
+    private LinkedList<Integer> lyricsFrontList, melodyFrontList;
     Animation animation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +52,19 @@ public class ChooseCardActivity extends AppCompatActivity implements View.OnClic
 
         linearLayoutButtons.setVisibility(View.INVISIBLE);
 
-        //gallertyLinearLayout = findViewById(R.id.gallery);
         LayoutInflater inflater = LayoutInflater.from(this);
         for (int i = 0; i < pack.getPackCard().size(); i++) {
             iv = new ImageView(this);
             iv.setImageResource(pack.getPackCard().get(i).getImg());
+            if(pack.getPackSubject() == Card.Subject.Melody)
+            {
+                iv.setImageResource(melodyFrontList.get(i));
+            }
+            if(pack.getPackSubject() == Card.Subject.Lyrics)
+            {
+                iv.setImageResource(lyricsFrontList.get(i));
+            }
+
             iv.setLayoutParams(new android.view.ViewGroup.LayoutParams(400 ,400));
             //------------- to change the marggin ----------------------------------------------------------------------
             ViewGroup.MarginLayoutParams marginParams = new ViewGroup.MarginLayoutParams(iv.getLayoutParams());
@@ -115,6 +124,43 @@ public class ChooseCardActivity extends AppCompatActivity implements View.OnClic
     public static float dpFromPx(final Context context, final float px) {
         return px / context.getResources().getDisplayMetrics().density;
     }
+    public static LinkedList<Integer>  backLyricsChooseList()
+    {
+        LinkedList<Integer> lyricsFrontList = new LinkedList<Integer>();
+       lyricsFrontList.add(R.drawable.lyrics_front_3_songs_9_lines);
+       lyricsFrontList.add(R.drawable.lyrics_front_associations);
+       lyricsFrontList.add(R.drawable.lyrics_front_blank_out_lyrics);
+       lyricsFrontList.add(R.drawable.lyrics_front_fill_in_the_blank_1);
+       lyricsFrontList.add(R.drawable.lyrics_front_fill_in_the_blank_2);
+       lyricsFrontList.add(R.drawable.lyrics_front_metaphor_1);
+       lyricsFrontList.add(R.drawable.lyrics_front_metaphor_2);
+       lyricsFrontList.add(R.drawable.lyrics_front_the_rap_song);
+       lyricsFrontList.add(R.drawable.lyrics_front_blues_inspired_lyrics);
+       lyricsFrontList.add(R.drawable.lyrics_front_brainstorming);
+       lyricsFrontList.add(R.drawable.lyrics_front_diamond_poem);
+       lyricsFrontList.add(R.drawable.lyrics_front_5_titles_1_song);
+
+        return lyricsFrontList;
+    }
+    public static LinkedList<Integer>  backMelodyChooseList()
+    {
+        LinkedList<Integer> melodyFrontList = new LinkedList<Integer>();
+       melodyFrontList.add(R.drawable.melody_front_intonation_2);
+       melodyFrontList.add(R.drawable.melody_front_intonation_1);
+       melodyFrontList.add(R.drawable.melody_front_pentatonic_scale_2);
+       melodyFrontList.add(R.drawable.melody_front_random_notes_1);
+       melodyFrontList.add(R.drawable.melody_front_random_notes_2);
+       melodyFrontList.add(R.drawable.melody_front_environment_1);
+       melodyFrontList.add(R.drawable.melody_front_environment_2);
+       melodyFrontList.add(R.drawable.melody_front_favorite_song_1);
+       melodyFrontList.add(R.drawable.melody_front_favorite_song_2);
+       melodyFrontList.add(R.drawable.melody_front_image_1);
+       melodyFrontList.add(R.drawable.melody_front_image_2);
+       melodyFrontList.add(R.drawable.melody_front_image_2);
+
+
+        return melodyFrontList;
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -145,6 +191,9 @@ public class ChooseCardActivity extends AppCompatActivity implements View.OnClic
         againBtn = findViewById(R.id.chooseAgainBtn);
         packNameTxtV = findViewById(R.id.packNameTxV);
         packBackImgV = findViewById(R.id.packBackImgV);
+
+        lyricsFrontList = backLyricsChooseList();
+        melodyFrontList = backMelodyChooseList();
 
         packNameTxtV.setText(pack.getSubject());
         packBackImgV.setImageResource(pack.getBackCardImg());

@@ -458,8 +458,10 @@
                 android:id="@+id/ImgCordProgression"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:src="@drawable/chord_progression_back"
+                android:src="@drawable/chord_progression_front"
                 android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
 
@@ -468,33 +470,39 @@
                 android:id="@+id/ImgLyrics"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:src="@drawable/lyrics_back"
+                android:src="@drawable/lyrics_front"
                 android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageView
                 android:id="@+id/ImgInstruments"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:src="@drawable/instruments_back"
+                android:src="@drawable/instruments_front"
                 android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 tools:srcCompat="@tools:sample/avatars" />
             <ImageView
                 android:id="@+id/ImgMelody"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:layout_weight="1"
                 tools:srcCompat="@tools:sample/avatars"
-                android:src="@drawable/melody_back"/>
+                android:src="@drawable/melody_front"/>
 
             <ImageView
                 android:id="@+id/ImgTheme"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:src="@drawable/theme_back"
+                android:src="@drawable/theme_front"
                 android:layout_weight="1"
-
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
         </LinearLayout>

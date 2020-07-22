@@ -28,7 +28,7 @@ public class CardFragment extends Fragment {
     private int mImage;
 
     private ImageView imageView;
-private Button backBtn;
+    private Button backBtn;
     private OnFragmentInteractionListener mListener;
 
     public CardFragment() {
