@@ -252,12 +252,10 @@ public class FinalPage extends AppCompatActivity implements Serializable, View.O
 //                    songTitle.getText().toString() +
 //                    "FinalSongRec"
 //                    + "File" + "AudioRecording.3gp";
-
-
             fileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" +
                     songTitle.getText().toString() +
                     pack.get(cardSubjectNum).getSubject()
-                    + "File" + "AudioRecording.ogg";
+                    + "File" + "AudioRecording.3gp";
 
         }
         //recordDB.insertSong(fileName,songTitle.getText().toString());

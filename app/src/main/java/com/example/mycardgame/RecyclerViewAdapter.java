@@ -102,10 +102,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 String sharePath = Environment.getExternalStorageDirectory().getPath() + "/" +
                         songNameAndDateArray.get(newI).getSongName().toString() +
                         "FinalSongRec"
-                       + "File" + "AudioRecording.ogg";
+                       + "File" + "AudioRecording.3gp";
                 Uri uri = Uri.parse(sharePath);
                 shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.setType("audio/*");
+                shareIntent.setType("audio/mp3");
                 shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
                 shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 //startActivity(Intent.createChooser(share, "Share Sound File"));
