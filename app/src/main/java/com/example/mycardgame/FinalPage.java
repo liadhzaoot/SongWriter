@@ -32,7 +32,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.util.ArrayList;
-
+/**
+ * the final page
+ */
 public class FinalPage extends AppCompatActivity implements Serializable, View.OnClickListener,
                                                             NoteFragment.OnFragmentInteractionListener,
                                                             CardFragment.OnFragmentInteractionListener,
